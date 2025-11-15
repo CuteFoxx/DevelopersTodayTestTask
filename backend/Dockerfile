@@ -1,14 +1,10 @@
 FROM node:24-alpine
 
-WORKDIR /usr/src/app
+WORKDIR  /app
 
 COPY --chown=node:node package*.json ./
 
-RUN npm install --user -g npm
-
 RUN npm install --user
-
-RUN npm install -g @nestjs/cli
 
 COPY --chown=node:node . .
 
